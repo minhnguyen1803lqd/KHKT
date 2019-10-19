@@ -1,0 +1,98 @@
+body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    font-family: sans-serif;
+}
+#container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #2f3542;
+    text-align: center;
+    border-radius: 10px;
+}
+h1 {
+    color: #ffffff;
+}
+.form input[type = "text"], .form input[type = "password"] {
+    text-align: center;
+    outline: none;
+    background-color: #ffd32a;
+    border: 2px solid #ffd32a;
+    border-radius: 24px;
+}
+#submit-btn {
+    background-color: #ff3f34;
+    border: 2px solid #ff3f34;
+    border-radius: 24px;
+    color: white;
+    outline: none;
+}
+::placeholder {
+    color: #808e9b;
+}
+@media screen and (min-width: 601px) {
+    #container {
+        width: 50vw;
+    }
+    h1 {
+        padding: 1vw 0.25vw;
+        font-size: 3.5vw;
+        margin-bottom: 10vh;
+    }
+    .form input[type = "text"], .form input[type = "password"] {
+        padding: 1vh 0.5vw;
+        margin-bottom: 2vh;
+        font-size: 1.25vw;
+    }
+    .form input[type = "text"]:focus, .form input[type = "password"]:focus {
+        width: 25vw;
+        background-color: #ffdd59;
+        border: 2px solid white;
+        color: #1e272e;
+    }
+    #submit-btn {
+        padding: 1vh 3vw;
+        margin-top: 4vh;
+        margin-bottom: 3vh;
+        font-size: 1.25vw;
+    }
+    #submit-btn:hover {
+        background-color: #05c46b;
+        border: 2px solid #0be881;
+    }
+}
+@media screen and (max-width: 600px) {
+    #container {
+        width: 90vw;
+    }
+    h1 {
+        padding: 3vw 3vw;
+        font-size: 7vw;
+        margin-bottom: 5vh;
+    }
+    .form input[type = "text"], .form input[type = "password"] {
+        padding: 2vw 2vw;
+        margin-bottom: 2vh;
+        font-size: 3.25vw;
+    }
+    .form input[type = "text"]:focus, .form input[type = "password"]:focus {
+        width: 60vw;
+        background-color: #ffdd59;
+        border: 2px solid white;
+        color: #1e272e;
+    }
+    #submit-btn {
+        padding: 1.5vw 6vw;
+        margin-top: 2vh;
+        margin-bottom: 2vh;
+        font-size: 4vw;
+    }
+    #submit-btn:hover {
+        background-color: #05c46b;
+        border: 2px solid #0be881;
+    }
+}

@@ -1,0 +1,128 @@
+body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    font-family: sans-serif;
+}
+#container {
+    background-color: #2f3542;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: grid;
+    grid-gap: 1em;
+    text-align: center;
+    border-radius: 10px;
+}
+h1 {
+    color: #ffb8b8;
+    text-transform: uppercase;
+}
+#inp-username {
+    background-color: #218c74;
+    border: none;
+    text-align: center;
+    border-radius: 25px;
+    outline: none;
+    color: #2f3542;
+    font-weight: 500;
+    transition: 0.15s;
+    border: 1px solid #218c74;
+}
+#inp-password {
+    background-color: #218c74;
+    border: none;
+    text-align: center;
+    border-radius: 25px;
+    outline: none;
+    color: #2f3542;
+    font-weight: 500;
+    transition: 0.15s;
+    border: 1px solid #218c74;
+}
+#submit-btn {
+    background-color: #b33939;
+    outline: none;
+    border: 2px solid #b33939;
+    color: white;
+    border-radius: 24px;
+}
+#submit-btn:hover {
+    background-color: #ff4757;
+    border: 2px solid #aaa69d;
+}
+::placeholder {
+    color: #ced6e0;
+}
+@media screen and (min-width: 601px) {
+    #container {
+        width: 60vw;
+    }
+    h1 {
+        font-size: 3vw;
+        padding: 2vh 2vw;
+        margin-bottom: 5vw;
+    }
+    #inp-username {
+        font-size: 1.25vw;
+        padding: 1vh 1vw;
+        margin-bottom: 2vw;
+    }
+    #inp-username:focus {
+        width: 25vw;
+        background-color: #0fb9b1;
+        border: 1px solid white;
+    }
+    #inp-password {
+        font-size: 1.25vw;
+        padding: 1vh 1vw;
+        margin-bottom: 2vw;
+    }
+    #inp-password:focus {
+        width: 25vw;
+        background-color: #0fb9b1;
+        border: 1px solid white;
+    }
+    #submit-btn {
+        padding: 0.75vh 2vw;
+        margin-top: 2vh;
+        margin-bottom: 1vh;
+        font-size: 1.25vw;
+    }
+}
+@media screen and (max-width: 600px) {
+    #container {
+        width: 80vw;
+    }
+    h1 {
+        font-size: 4vw;
+        padding: 1vh 2vw;
+        margin-bottom: 5vh;
+    }
+    #inp-username {
+        padding: 1vh 1vw;
+        margin-bottom: 4vw;
+    }
+    #inp-username:focus {
+        width: 55vw;
+        background-color: #0fb9b1;
+        border: 1px solid white;
+    }
+    #inp-password {
+        padding: 1vh 1vw;
+        margin-bottom: 4vw;
+    }
+    #inp-password:focus {
+        width: 55vw;
+        background-color: #0fb9b1;
+        border: 1px solid white;
+    }
+    #submit-btn {
+        padding: 0.5vh 2vw;
+        margin-top: 2vh;
+        margin-bottom: 1vh;
+        font-size: 3vw;
+    }
+}
