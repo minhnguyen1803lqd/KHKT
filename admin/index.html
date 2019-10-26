@@ -1,0 +1,113 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="#9AECDB">
+    <script src="https://kit.fontawesome.com/3bcf7d20d3.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Trường THPT Lê Quý Đôn</title>
+</head>
+<body>  
+    <div class="header" id="header">
+        <h1>Trường THPT chuyên Lê Quý Đôn</h1>
+    </div>
+
+    <div class="tabs" id="tabs">
+            
+        <div class="tabs__sidebar">
+            <button class="tabs__button" data-for-tab="1">Tạo biểu mẫu</button>
+            <button class="tabs__button" data-for-tab="2">Thống kê</button>
+            <button class="tabs__button" data-for-tab="3">Chỉnh sửa thông tin</button>
+        </div>
+
+        <div class="tabs__content " data-tab="1">
+                
+            <form action="create-form.php" method="POST">
+
+                <div class="form-heading" id="form-heading">
+                    <input type="text" name="heading" id="heading" placeholder="Tiêu đề biểu ngữ" value="Biểu ngữ không có tiêu đề">
+                    <input type="text" name="discription" id="discription" placeholder="mô tả biểu ngữ" value="Biểu ngữ không có mô tả">
+                </div>
+
+                <div class="form-body" id="form-body">
+                    
+                    <div class="wrapper" id="wrapper">
+                        <div class="question-wrapper" id="question-wrapper">
+                            <input type="text" name="inp-question" id="inp-question" value="Câu hỏi chưa có tiêu đề" placeholder="Câu hỏi">
+                            <p>Phần nhập câu trả lời...</p>
+                        </div>
+                    </div>
+                    
+                    <div class="btn-wrapper" id="btn-wrapper">
+                        <button type="button" id="add-question">
+                            <i class="fas fa-plus-circle"></i>
+                        </button>
+                    </div>
+
+                    <script type="text/javascript">
+                        const btn = document.getElementById("add-question");
+                        btn.addEventListener("click", () => {
+                            var txt = '<div class="question-wrapper" id="question-wrapper"><input type="text" name="inp-question" id="inp-question" value="Câu hỏi chưa có tiêu đề" placeholder="Câu hỏi"><p>Phần nhập câu trả lời...</p></div>';
+                            document.getElementById("wrapper").innerHTML += txt;
+                        });
+                    </script>
+
+                </div>
+
+                <div class="submit-btn" id="submit-btn">
+                    <button type="submit" id="submit-form">Tạo biểu ngữ</button>
+                </div>
+            </form>
+
+        </div>
+
+        <div class="tabs__content " data-tab="2">
+            <p>Thống kê</p>
+        </div>
+
+        <div class="tabs__content " data-tab="3">
+            <p>Chỉnh sửa thông tin</p>
+        </div> 
+
+    </div>
+
+    <script type="text/javascript">
+        function setupTabs () {
+            document.querySelectorAll(".tabs__button").forEach(button => {
+                button.addEventListener("click", () => {
+                    const sideBar = button.parentElement;
+                    const tabsContainer = sideBar.parentElement;
+                    const tabNumber = button.dataset.forTab;
+                    const tabToActivate = tabsContainer.querySelector('.tabs__content[data-tab="' + tabNumber + '"]');
+
+                    var cnt = 1;
+                    sideBar.querySelectorAll(".tabs__button").forEach(button => {
+                        button.classList.remove("tabs__button" + cnt + "--active");
+                        cnt++;
+                    });
+                    cnt = 1;
+                    tabsContainer.querySelectorAll(".tabs__content").forEach(tab => {
+                        tab.classList.remove("tabs__content" + cnt + "--active");
+                        cnt++;
+                    });
+                    button.classList.add("tabs__button" + tabNumber + "--active");
+                    tabToActivate.classList.add("tabs__content" + tabNumber + "--active");
+                });
+            });
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            setupTabs();
+
+            document.querySelectorAll(".tabs").forEach(tabsContainer => {
+                tabsContainer.querySelector(".tabs__sidebar .tabs__button").click();
+            });
+        });
+    </script>
+
+    <div class="footer" id="footer">
+        <h2>Trường THPT chuyên Lê Quý Đôn - tỉnh Khánh Hòa</h2>
+    </div>
+</body>
+</html>

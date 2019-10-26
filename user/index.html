@@ -1,0 +1,77 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="#9AECDB">
+    <link rel="stylesheet" href="style.css">
+    <title>Trường THPT Lê Quý Đôn</title>
+</head>
+<body>  
+    <div class="big-container">
+        <div class="header" id="header">
+            <h1>Trường THPT chuyên Lê Quý Đôn</h1>
+        </div>
+
+        <div class="tabs" id="tabs">
+            
+            <div class="tabs__sidebar">
+                <button class="tabs__button" data-for-tab="1">Section 1</button>
+                <button class="tabs__button" data-for-tab="2">Section 2</button>
+                <button class="tabs__button" data-for-tab="3">Section 3</button>
+            </div>
+
+            <div class="tabs__content " data-tab="1">
+                
+            </div>
+
+            <div class="tabs__content " data-tab="2">
+                <p>bug2</p>
+            </div>
+
+            <div class="tabs__content " data-tab="3">
+                <p>bug3</p>
+            </div> 
+
+        </div>
+
+        <script type="text/javascript">
+            function setupTabs () {
+                document.querySelectorAll(".tabs__button").forEach(button => {
+                    button.addEventListener("click", () => {
+                        const sideBar = button.parentElement;
+                        const tabsContainer = sideBar.parentElement;
+                        const tabNumber = button.dataset.forTab;
+                        const tabToActivate = tabsContainer.querySelector('.tabs__content[data-tab="' + tabNumber + '"]');
+
+                        var cnt = 1;
+                        sideBar.querySelectorAll(".tabs__button").forEach(button => {
+                            button.classList.remove("tabs__button" + cnt + "--active");
+                            cnt++;
+                        });
+                        cnt = 1;
+                        tabsContainer.querySelectorAll(".tabs__content").forEach(tab => {
+                            tab.classList.remove("tabs__content" + cnt + "--active");
+                            cnt++;
+                        });
+                        button.classList.add("tabs__button" + tabNumber + "--active");
+                        tabToActivate.classList.add("tabs__content" + tabNumber + "--active");
+                    });
+                });
+            }
+
+            document.addEventListener("DOMContentLoaded", () => {
+                setupTabs();
+
+                document.querySelectorAll(".tabs").forEach(tabsContainer => {
+                    tabsContainer.querySelector(".tabs__sidebar .tabs__button").click();
+                });
+            });
+        </script>
+
+        <div class="footer" id="footer">
+            <h2>Trường THPT chuyên Lê Quý Đôn - tỉnh Khánh Hòa</h2>
+        </div>
+    </div>
+</body>
+</html>
