@@ -1,0 +1,8 @@
+Đăng kí vé xe buýt
+--------------
+Tên học sinh: Đặng Minh Liêm
+Mã số học sinh: 2345 - 6789
+--------------
+Họ và tên học sinh: Đặng Minh Liêm
+Lớp: 11 Ti
+Tuyến xe buýt (1 hoặc 2): Tuyến 1

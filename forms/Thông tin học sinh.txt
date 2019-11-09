@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<form>
+    <heading>Thông tin học sinh</heading>
+    <discription>Phiếu thông tin</discription>
+    <length>7</length>
+    <question1>Họ và tên học sinh</question1>
+    <question2>Lớp</question2>
+    <question3>Ngày tháng năm sinh</question3>
+    <question4>Họ và tên bố</question4>
+    <question5>Số điện thoại của bố</question5>
+    <question6>Họ và tên mẹ</question6>
+    <question7>Số điện thoại của mẹ</question7>
+</form>

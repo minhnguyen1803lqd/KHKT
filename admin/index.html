@@ -6,6 +6,7 @@
     <meta name="theme-color" content="#9AECDB">
     <script src="https://kit.fontawesome.com/3bcf7d20d3.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
+    <meta http-equiv=”Content-Type” content=”text/html; charset=UTF-8″/>
     <title>Trường THPT Lê Quý Đôn</title>
 </head>
 <body>  
@@ -34,7 +35,7 @@
                     
                     <div class="wrapper" id="wrapper">
                         <div class="question-wrapper" id="question-wrapper">
-                            <input type="text" name="inp-question" id="inp-question" value="Câu hỏi chưa có tiêu đề" placeholder="Câu hỏi">
+                            <input type="text" name="question1" id="inp-question" value="Câu hỏi chưa có tiêu đề" placeholder="Câu hỏi">
                             <p>Phần nhập câu trả lời...</p>
                         </div>
                     </div>
@@ -46,17 +47,46 @@
                     </div>
 
                     <script type="text/javascript">
+                        var cnt = 1;
                         const btn = document.getElementById("add-question");
                         btn.addEventListener("click", () => {
-                            var txt = '<div class="question-wrapper" id="question-wrapper"><input type="text" name="inp-question" id="inp-question" value="Câu hỏi chưa có tiêu đề" placeholder="Câu hỏi"><p>Phần nhập câu trả lời...</p></div>';
-                            document.getElementById("wrapper").innerHTML += txt;
+                            cnt++;
+                            const wrapper = document.getElementById("wrapper");
+                            const newquestion = document.createElement("div");
+                            newquestion.className = "question-wrapper";
+                            newquestion.id = "question-wrapper";
+
+                            const inp = document.createElement("input");
+                            inp.type = "text";
+                            inp.name = "question" + cnt;
+                            inp.id = "inp-question";
+                            inp.setAttribute('value', 'Câu hỏi chưa có tiêu đề');
+                            inp.placeholder = "Câu hỏi";
+
+                            const pp = document.createElement('p');
+                            pp.innerHTML = "Phần nhập câu trả lời...";
+
+                            newquestion.appendChild(inp);
+                            newquestion.appendChild(pp);
+                            wrapper.appendChild(newquestion);
                         });
                     </script>
 
                 </div>
 
                 <div class="submit-btn" id="submit-btn">
+                    <input type="text" name="cnt-ques" id="cnt-ques" value="">
                     <button type="submit" id="submit-form">Tạo biểu ngữ</button>
+                    <script>
+                        const btn2 = document.getElementById("submit-form");
+                        btn2.addEventListener("click", () => {
+                            var count = 0;
+                            document.querySelectorAll(".question-wrapper").forEach(input => {
+                                count++;
+                            });
+                            document.getElementById("cnt-ques").setAttribute("value", count);
+                        });
+                    </script>
                 </div>
             </form>
 

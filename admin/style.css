@@ -125,7 +125,7 @@ form {
     border-radius: 10px;
     padding: 10px;
 }
-.question-wrapper {
+#question-wrapper {
     width: inherit;
     height: 14vh;
     border: 3px solid none;
@@ -198,6 +198,9 @@ p {
 }
 #submit-btn button:hover {
     background-color: #4cd137;
+}
+#cnt-ques {
+    display: none;
 }
 .tabs__content2--active {
     display: block;

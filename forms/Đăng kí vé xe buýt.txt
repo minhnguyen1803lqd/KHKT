@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<form>
+    <heading>Đăng kí vé xe buýt</heading>
+    <discription>Đăng kí vé xe buýt hằng tháng</discription>
+    <length>3</length>
+    <question1>Họ và tên học sinh</question1>
+    <question2>Lớp</question2>
+    <question3>Tuyến xe buýt (1 hoặc 2)</question3>
+</form>

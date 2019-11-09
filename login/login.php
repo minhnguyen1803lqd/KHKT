@@ -1,6 +1,9 @@
 <?php
 
-    require_once("../php/config.php");
+    $dbname = "tmp_data";
+    $servername = "localhost";
+    $dbusername = "root";
+    $dbpassword = "";
 
     $conn = mysqli_connect($servername, $dbusername, $dbpassword, $dbname);
 
@@ -16,7 +19,7 @@
     }
 
     $checker = 0;
-    $sql = "SELECT * FROM lqdstudentaccount";
+    $sql = "SELECT * FROM tmp_account";
     $table = mysqli_query($conn, $sql);
     if ($table) {
         while ($row = mysqli_fetch_row($table)) {
@@ -28,7 +31,7 @@
                 $checker = 1;
             }
             else if ($username == $username_th && $password == $password_th) {
-                header("location: ../user/index.html");
+                header("location: ../user/index.php?username=$username&password=$password");
                 $checker = 1;
             }
         }

@@ -1,0 +1,8 @@
+Đăng kí vé xe buýt
+--------------
+Tên học sinh: Nguyễn Nhật Minh
+Mã số học sinh: 1234 - 5678
+--------------
+Họ và tên học sinh: Nguyễn Nhật Minh
+Lớp: 11 Ti
+Tuyến xe buýt (1 hoặc 2): Tuyến 1
